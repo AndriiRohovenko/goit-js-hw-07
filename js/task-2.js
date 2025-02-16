@@ -24,3 +24,41 @@ const images = [
     alt: 'Zebras on Zebra',
   },
 ];
+
+const gallery = document.querySelector('.gallery');
+
+gallery.style.cssText = `
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    list-style: none;
+    width: 1128px;
+    margin: 0px auto;
+    padding: 0px;
+    gap: 48px 24px;
+`;
+
+for (const img_obj of images) {
+  const list_el = document.createElement('li');
+
+  list_el.style.cssText = `
+    margin: 0px;
+    padding: 0px;
+    width: 360px;
+    height: 300px;
+`;
+
+  const list_img = document.createElement('img');
+
+  list_img.src = img_obj.url;
+  list_img.alt = img_obj.alt;
+
+  list_img.style.cssText = `
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;`;
+
+  gallery.appendChild(list_el).appendChild(list_img);
+}
