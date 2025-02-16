@@ -11,7 +11,7 @@ input.addEventListener('input', change_user_name_hanlder);
 
 function change_user_name_hanlder(event) {
   const default_name = 'Anonymous';
-  span_output.textContent = event.target.value;
+  span_output.textContent = event.target.value.split(' ').join('');
   if (event.target.value == '') {
     span_output.textContent = default_name;
   }
