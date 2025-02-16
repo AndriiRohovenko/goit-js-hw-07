@@ -46,7 +46,6 @@ widget_btn.addEventListener('mouseout', () => {
 // --------------------
 
 widget_btn.addEventListener('click', event => {
-  console.log(event);
   const random_color_value = getRandomHexColor();
   const body = document.querySelector('body');
   body.style.backgroundColor = random_color_value;
