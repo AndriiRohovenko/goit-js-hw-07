@@ -38,7 +38,6 @@ form_btn.style.cssText = `
   padding: 8px 16px;
   color: white; 
   font-size: 16px; 
-  font-family: 'Montserrat', sans-serif; 
   font-weight: 500; 
   line-height: 1.25; 
   cursor: pointer; 
