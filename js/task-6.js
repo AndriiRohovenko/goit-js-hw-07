@@ -39,6 +39,7 @@ buttons.forEach(btn => {
   transition: background-color 0.3s ease, transform 0.2s ease;
   width: 120px;
   `;
+
   // Add hover state using event listeners
   btn.addEventListener('mouseover', () => {
     btn.style.backgroundColor = 'rgba(108, 140, 255, 1)';
@@ -60,6 +61,17 @@ buttons.forEach(btn => {
   }
 });
 
+const boxesContainer = document.getElementById('boxes');
+boxesContainer.style = `
+    display: flex; 
+    flex-wrap: wrap; /* Allows wrapping if boxes exceed container width */
+    gap: 10px; /* Space between boxes */
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(245, 245, 245);
+    padding: 16px;
+    border-radius: 8px;`;
+
 // Layout
 
 function getRandomHexColor() {
@@ -68,10 +80,8 @@ function getRandomHexColor() {
     .padStart(6, 0)}`;
 }
 
-// Implementing Create and Destroy functionality
 const createBtn = document.querySelector('[data-create]');
 const destroyBtn = document.querySelector('[data-destroy]');
-const boxesContainer = document.getElementById('boxes');
 
 createBtn.addEventListener('click', () => {
   const amount = parseInt(input.value);
