@@ -39,26 +39,30 @@ gallery.style.cssText = `
     gap: 48px 24px;
 `;
 
-for (const img_obj of images) {
-  const list_el = document.createElement('li');
-
-  list_el.style.cssText = `
+const styles_for_item = `
     margin: 0px;
     padding: 0px;
     width: 360px;
-    height: 300px;
-`;
+    height: 300px;`;
 
-  const list_img = document.createElement('img');
-
-  list_img.src = img_obj.url;
-  list_img.alt = img_obj.alt;
-
-  list_img.style.cssText = `
+const styles_for_image = ` 
     display: block;
     width: 100%;
     height: 100%;
     object-fit: cover;`;
 
-  gallery.appendChild(list_el).appendChild(list_img);
-}
+const galleryMarkup = images
+  .map(
+    img => `
+    <li style="${styles_for_item}">
+      <img
+        src="${img.url}"
+        alt="${img.alt}"
+        style="${styles_for_image}"
+      />
+    </li>
+  `
+  )
+  .join('');
+
+gallery.innerHTML = galleryMarkup;
