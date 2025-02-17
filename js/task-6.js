@@ -100,6 +100,9 @@ function createBoxes(amount) {
   destroyBoxes();
 
   let size = 30;
+
+  const fragment = document.createDocumentFragment();
+
   for (let i = 0; i < amount; i++) {
     const box = document.createElement('div');
     box.style.width = `${size}px`;
@@ -107,10 +110,11 @@ function createBoxes(amount) {
     box.style.backgroundColor = getRandomHexColor();
     box.style.margin = '5px';
     box.style.borderRadius = '5px';
-    boxesContainer.appendChild(box);
+    fragment.appendChild(box);
 
     size += 10;
   }
+  boxesContainer.appendChild(fragment);
 }
 
 function destroyBoxes() {
